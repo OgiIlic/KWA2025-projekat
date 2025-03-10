@@ -1,1 +1,14 @@
 <p>home works!</p>
+<div *ngIf="error">
+    <h2>Oops, an error has occured</h2>
+    <p style="color: red;">{{error}}</p>
+</div>
+<div *ngIf="movies">
+    <p *ngFor="let movie of movies">{{movie.movieId}} {{movie.title}}</p>
+    <pre>{{movies | json}}</pre>
+</div>
+<div *ngIf="!error && !movies">
+    <h2>Please wait!</h2>
+    <p>We are loading the data</p>
+</div>
+
