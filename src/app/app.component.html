@@ -1,6 +1,10 @@
-<h1>Hello wrld</h1>
-<p>
-    <a routerLink="/">Home</a>  |  <a routerLink="/about">About</a>
-</p>
+<mat-toolbar color="primary">
+    <span><i class="fa-solid fa-film"></i> StreamCinema</span>
+    <span class="spacer"></span>
+    <span>
+        <a routerLink="/" mat-button><i class="fa-solid fa-house"></i> Home</a>
+        <a routerLink="/about" mat-button><i class="fa-solid fa-circle-info"></i> About</a>
+    </span>
+</mat-toolbar>
 
 <router-outlet />
