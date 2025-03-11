@@ -5,14 +5,26 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+main{
+    margin-top: 100px;
+}
+
 .container{
+    margin-left: 40px;
     margin-top: 30px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    justify-content: center;
 }
 
 .example-card{
     max-width: 400px;
+    margin-bottom: 12px;
+}
+
+mat-toolbar{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
 }
 

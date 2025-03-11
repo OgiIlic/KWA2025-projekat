@@ -20,4 +20,9 @@ export class HomeComponent {
     .then(rsp=>this.movies = rsp.data)
     .catch((e: AxiosError) => this.error = `${e.code}: ${e.message}`)
   }
+
+  formatDate(iso: string){
+    return new Date(iso).toLocaleString('sr-RS')
+  }
+
 }
