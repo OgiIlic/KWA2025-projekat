@@ -27,6 +27,7 @@
         title: string
         originalTitle: string
         description: string
+        poster: string
         shortDescription: string
         startDate: string
         shortUrl: string

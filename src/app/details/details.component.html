@@ -1,0 +1,12 @@
+<p>details works!</p>
+<main>
+    <div class="wrapper">
+        <div *ngIf="movie">
+        <img mat-card-image src="{{movie.poster}}"
+                alt={{movie.title}}>
+        </div>
+        <pre>{{movie | json }}</pre>
+    </div>
+
+    <app-loading *ngIf="!movie"></app-loading>
+</main>

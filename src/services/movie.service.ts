@@ -23,7 +23,7 @@ export class MovieService {
         })
     }
 
-    static async getMovieById(id: number) {
-        return axios.get(`/movie/${id}`)
+    static async getMovieById(movieId: number) {
+        return client.get(`/movie/${movieId}`)
     }
 }
