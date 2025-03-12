@@ -20,6 +20,7 @@ main{
 .example-card{
     max-width: 400px;
     margin-bottom: 12px;
+    padding-bottom: 100px;
 }
 
 mat-toolbar{
@@ -27,4 +28,27 @@ mat-toolbar{
     top: 0px;
     z-index: 100;
 }
+
+mat-card-actions{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 10px;
+}
+
+.loading-container{
+    display: flex;
+    justify-content: center;
+}
+
+.loading{
+    width: 700px;
+    height: 250px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-top: 30px;
+}
+
+
 
