@@ -1,0 +1,29 @@
+<main>
+  <div class="actor-wrapper" *ngIf="dataSource">
+    <h1>Glumci</h1>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="actorId">
+        <th mat-header-cell *matHeaderCellDef> ActorId </th>
+        <td mat-cell *matCellDef="let element"> {{element.actorId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef><i class="fa-solid fa-location-arrow"></i> Opcije </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button><i class="fa-solid fa-arrow-up-right-from-square"></i> Detalji</button>
+          <button mat-button><i class="fa-solid fa-hashtag"></i> Visit instagram</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <app-loading *ngIf="!dataSource"></app-loading>
+</main>
