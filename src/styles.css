@@ -64,5 +64,44 @@ mat-card-actions{
     margin-right: auto;
 }
 
+.detail-card{
+    width: 49%;
+}
+
+.movie-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.auth-card{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.auth{
+    padding-bottom: 50px;
+}
+
+.auth-h2{
+    padding-bottom: 20px;
+    margin-left: 125px;
+    cursor: default;
+}
+
+.auth-card-actions{
+    display: fixed;
+    bottom: 5px;
+    left: 5px;
+}
+
 
 

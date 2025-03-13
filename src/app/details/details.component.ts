@@ -5,10 +5,13 @@ import { MovieService } from '../../services/movie.service';
 import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { MatCardImage, MatCardModule } from '@angular/material/card';
 import { LoadingComponent } from "../loading/loading.component";
+import { MatButton } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+
 
 @Component({
   selector: 'app-details',
-  imports: [JsonPipe, MatCardImage, NgIf, LoadingComponent],
+  imports: [JsonPipe, MatCardImage, NgIf, LoadingComponent, MatCardModule, MatButton, MatListModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

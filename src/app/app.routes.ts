@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { ActorsComponent } from './actors/actors.component';
 import { DetailsComponent } from './details/details.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path: 'search', component: SearchComponent},
     {path: 'actors', component: ActorsComponent},
     {path: 'details/:movieId', component: DetailsComponent},
+    {path: 'login', component: LoginComponent},
     {path: '**', redirectTo: ''}
 ];

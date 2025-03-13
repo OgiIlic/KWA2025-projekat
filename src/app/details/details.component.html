@@ -1,11 +1,28 @@
 <p>details works!</p>
 <main>
     <div class="wrapper">
+      <div class="movie-content">
         <div *ngIf="movie">
         <img mat-card-image src="{{movie.poster}}"
                 alt={{movie.title}}>
         </div>
-        <pre>{{movie | json }}</pre>
+        <!-- <pre>{{movie | json }}</pre> -->
+
+        <mat-card class="detail-card" appearance="outlined">
+            <mat-card-content>
+              <mat-list role="list">
+                  <mat-list-item>{{movie?.title}}</mat-list-item>
+                  <p>{{movie?.description}}</p>
+                  <mat-list-item>Glumci: </mat-list-item>
+                  <p>{{movie?.movieActors?.actor?.name}}</p>
+                  <mat-list-item>Reziser: </mat-list-item>
+                  <p>{{movie?.director?.name}}</p>
+              </mat-list>
+            </mat-card-content>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card>
+        </div>
     </div>
 
     <app-loading *ngIf="!movie"></app-loading>
