@@ -39,7 +39,7 @@
             name: string
             createdAt: string
         }
-        movieActors: {
+        movieActors: [{
             movieActorId: number
             movieId: number
             actorId: number
@@ -48,5 +48,5 @@
                 name: string
                 createdAt: string
             } 
-        } 
+        } ]
     }

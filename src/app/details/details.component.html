@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="movie-content">
         <div *ngIf="movie">
-        <img mat-card-image src="{{movie.poster}}"
+        <img mat-card-image class="detail-card-image" src="{{movie.poster}}"
                 alt={{movie.title}}>
         </div>
         <!-- <pre>{{movie | json }}</pre> -->
@@ -11,12 +11,15 @@
         <mat-card class="detail-card" appearance="outlined">
             <mat-card-content>
               <mat-list role="list">
-                  <mat-list-item>{{movie?.title}}</mat-list-item>
+                  <h1>{{movie?.title}}</h1>
+                  <h3>({{movie.originalTitle}})</h3>
                   <p>{{movie?.description}}</p>
-                  <mat-list-item>Glumci: </mat-list-item>
-                  <p>{{movie?.movieActors?.actor?.name}}</p>
-                  <mat-list-item>Reziser: </mat-list-item>
+                  <h3>Režiser: </h3>
                   <p>{{movie?.director?.name}}</p>
+                  <h3>Vreme trajanja: </h3>
+                  <p>{{movie.runTime}} minuta</p>
+                  <h3>Početak prikazivanja: </h3>
+                  <p>{{utils.formatDate(movie.startDate)}}</p>
               </mat-list>
             </mat-card-content>
             <mat-card-actions>

@@ -9,6 +9,11 @@ main{
     margin-top: 100px;
 }
 
+.title-button{
+    text-decoration: none;
+    color: black;
+}
+
 .container{
     margin-left: 40px;
     margin-top: 30px;
@@ -66,6 +71,12 @@ mat-card-actions{
 
 .detail-card{
     width: 49%;
+    height: 736px;
+    font-size: 16px;
+}
+
+.detail-card-image{
+    height: 650px;
 }
 
 .movie-content{
@@ -73,7 +84,11 @@ mat-card-actions{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;   
+}
+
+.list{
+    font-size: 100;
 }
 
 .auth-card{
