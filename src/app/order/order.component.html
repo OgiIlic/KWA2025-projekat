@@ -1,0 +1,25 @@
+<div *ngIf="movie">
+    <div class="order-card" appearence="outlined">
+        <mat-card appearance="outlined">
+            <img mat-card-image src="{{movie.poster}}" alt={{movie.title}}>
+            <mat-card-content>
+                <h3>Ticket Order - {{movie.title}}</h3>
+                <mat-form-field class="full-width">
+                    <mat-label>Title</mat-label>
+                    <input type="text" matInput [value]="movie.title" disabled>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label></mat-label>
+                    <input type="text" matInput [value]="movie.shortDescription" disabled>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Premijera</mat-label>
+                    <input type="text" matInput [value]="utils.formatDate(movie.startDate)" disabled>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="doOrder()"><i class="fa-solid fa-money-bill"></i>REZERVISI</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

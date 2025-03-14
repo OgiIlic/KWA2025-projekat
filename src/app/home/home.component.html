@@ -19,7 +19,7 @@
             </mat-card-content>
             <mat-card-actions>
                 <a mat-button [routerLink]="['/details/', movie.movieId]" ><i class="fa-solid fa-arrow-up-right-from-square"></i> Detalji</a>
-                <button mat-button><i class="fa-solid fa-money-bill"></i> REZERVISI</button>
+                <a mat-button [routerLink]="['/details/'+movie.movieId+'/order']"><i class="fa-solid fa-money-bill"></i> REZERVISI</a>
             </mat-card-actions>
         </mat-card>
     </div>

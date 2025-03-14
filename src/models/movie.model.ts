@@ -19,6 +19,8 @@
       "createdAt": "2025-03-03T21:48:47.000Z"
     }*/
 
+import { MovieActorModel } from "./movieActor.model"
+
     export interface MovieModel {
         movieId: number
         internalId: string
@@ -39,14 +41,5 @@
             name: string
             createdAt: string
         }
-        movieActors: {
-            movieActorId: number
-            movieId: number
-            actorId: number
-            actor: {
-                actorId: number
-                name: string
-                createdAt: string
-            } 
-        } []
+        movieActors: MovieActorModel
     }

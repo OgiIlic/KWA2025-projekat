@@ -6,6 +6,7 @@ import { ActorsComponent } from './actors/actors.component';
 import { DetailsComponent } from './details/details.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { OrderComponent } from './order/order.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -15,5 +16,6 @@ export const routes: Routes = [
     {path: 'details/:movieId', component: DetailsComponent},
     {path: 'login', component: LoginComponent},
     {path: 'user', component: UserComponent},
+    {path: 'details/:movieId/order', component: OrderComponent},
     {path: '**', redirectTo: ''}
 ];
