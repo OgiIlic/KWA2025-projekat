@@ -1,0 +1,17 @@
+<div class="wrapper">
+
+    <button mat-button (click)="doChangePassword()">Change password</button>
+
+    <div *ngIf="orders.length == 0">
+        <p>Nema ordera</p>
+    </div>
+    
+    <div *ngIf="orders.length > 0">
+        <h3> Spisak ordera </h3>
+        <ul>
+            <li *ngFor="let order of orders">
+                {{order.movieId}} {{order.count}} {{order.pricePerCard}}
+            </li>
+        </ul>
+    </div>
+</div>

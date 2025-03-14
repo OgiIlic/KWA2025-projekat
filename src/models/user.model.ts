@@ -1,12 +1,7 @@
+import { OrderModel } from "./order.model"
+
 export interface UserModel {
     email: string
     password: string
-    orders: {
-        orderId: number
-        movieId: number
-        count: number
-        pricePerCard: string
-        status: 'reserved' | 'paid' | 'canceled'
-        rating: null | boolean
-    }[]
+    orders: OrderModel[]
 }
