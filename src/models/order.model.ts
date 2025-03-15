@@ -1,11 +1,10 @@
 import { MovieActorModel } from "./movieActor.model"
 
 export interface OrderModel {
-    orderId: number
     movieId: number
-    movieActors: MovieActorModel
+    title: string
     count: number
-    pricePerCard: string
+    pricePerCard: number
     status: 'reserved' | 'paid' | 'canceled'
     rating: null | boolean
 }

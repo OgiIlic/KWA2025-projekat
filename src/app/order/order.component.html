@@ -9,16 +9,27 @@
                     <input type="text" matInput [value]="movie.title" disabled>
                 </mat-form-field>
                 <mat-form-field class="full-width">
-                    <mat-label></mat-label>
-                    <input type="text" matInput [value]="movie.shortDescription" disabled>
+                    <mat-label>Režiser</mat-label>
+                    <input type="text" matInput [value]="movie.director.name" disabled>
                 </mat-form-field>
                 <mat-form-field class="full-width">
                     <mat-label>Premijera</mat-label>
                     <input type="text" matInput [value]="utils.formatDate(movie.startDate)" disabled>
                 </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Broj karata</mat-label>
+                    <input type="number" matInput [(ngModel)]="selectedCount">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Odredite karte</mat-label>
+                    <mat-select [(value)]="selectedPrice">
+                        <mat-option [value]="800"> Za odrasle - 800 din</mat-option>
+                        <mat-option [value]="710"> Za decu - 710 din</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button (click)="doOrder()"><i class="fa-solid fa-money-bill"></i>REZERVISI</button>
+                <button mat-button (click)="doOrder()"><i class="fa-solid fa-money-bill"></i> KUPI KARTU</button>
             </mat-card-actions>
         </mat-card>
     </div>
