@@ -1,6 +1,7 @@
 import { MovieActorModel } from "./movieActor.model"
 
 export interface OrderModel {
+    id: any
     movieId: number
     title: string
     count: number

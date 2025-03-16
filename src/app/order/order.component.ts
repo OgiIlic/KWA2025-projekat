@@ -3,17 +3,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
 import { UtilsService } from '../../services/utils.service';
 import { MatCardModule } from '@angular/material/card';
-import { NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-order',
-  imports: [MatCardModule, NgIf, NgFor, MatInputModule, MatButtonModule, MatSelectModule, MatFormFieldModule, FormsModule],
+  imports: [MatCardModule, NgIf, MatInputModule, MatButtonModule, MatSelectModule, MatFormFieldModule, FormsModule],
   templateUrl: './order.component.html',
   styleUrl: './order.component.css'
 })
@@ -32,6 +32,7 @@ export class OrderComponent {
 
   public doOrder() {
     const result = UserService.createOrder({
+      id: new Date().getTime(),
       movieId: this.movie.movieId,
       title: this.movie.title,
       count: this.selectedCount,
