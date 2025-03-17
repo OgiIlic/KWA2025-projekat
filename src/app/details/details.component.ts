@@ -12,7 +12,7 @@ import { UtilsService } from '../../services/utils.service';
 
 @Component({
   selector: 'app-details',
-  imports: [JsonPipe, MatCardImage, NgIf, NgFor,LoadingComponent, MatCardModule, MatButton, MatListModule],
+  imports: [MatCardImage, NgIf, LoadingComponent, MatCardModule, MatListModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

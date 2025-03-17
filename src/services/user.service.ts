@@ -7,6 +7,11 @@ export class UserService {
         if (!localStorage.getItem('users')) {
             const arr: UserModel[] = [{
                 email: 'user@example.com',
+                firstName: 'John',
+                lastName: 'Doe',
+                phone: '062555333',
+                address: 'Borova 5',
+                favoriteGenre: 'Drama',
                 password: 'user123',
                 orders: []
             }]
@@ -15,6 +20,20 @@ export class UserService {
         }
 
         return JSON.parse(localStorage.getItem('users')!)
+    }
+
+    static createUser(model: UserModel) {
+        const users = this.retrieveUsers()
+
+        for(let u of users) {
+            if(u.email === model.email) {
+                return false
+            }
+        }
+
+        users.push(model)
+        localStorage.setItem('users', JSON.stringify(users))
+        return true
     }
 
     static login(email: string, password: string): boolean {

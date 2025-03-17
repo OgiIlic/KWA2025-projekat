@@ -3,9 +3,12 @@
   <mat-card class="user-card" appearance="outlined">
     <mat-card-header>
       <img mat-card-avatar class="example-header-image" [src]="['https://ui-avatars.com/api/?name='+user.email]">
-      <mat-card-title>{{user.email}}</mat-card-title>
+      <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
       <mat-card-subtitle>Total orders: {{user.orders.length}}</mat-card-subtitle>
     </mat-card-header>
+    <mat-card-content>
+      <p>Omiljeni žanr: {{user.favoriteGenre}}</p>
+    </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="doChangePassword()"><i class="fa-solid fa-key"></i> Change password</button>
     </mat-card-actions>

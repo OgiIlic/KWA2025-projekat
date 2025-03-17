@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [JsonPipe, NgIf, NgFor, MatCardModule, MatButtonModule, LoadingComponent,RouterLink],
+  imports: [NgIf, NgFor, MatCardModule, MatButtonModule, LoadingComponent,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

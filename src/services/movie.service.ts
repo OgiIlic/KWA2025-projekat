@@ -26,4 +26,8 @@ export class MovieService {
     static async getMovieById(movieId: number) {
         return client.get(`/movie/${movieId}`)
     }
+
+    static async getGenres() {
+        return client.get('/genre')
+    }
 }
