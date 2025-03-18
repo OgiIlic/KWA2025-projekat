@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import axios from "axios"
+import { Observable } from "rxjs";
 
 const client = axios.create({
     baseURL: 'https://movie.pequla.com/api',

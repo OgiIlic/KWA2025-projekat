@@ -17,7 +17,7 @@ import { UtilsService } from '../../services/utils.service';
 })
 export class UserComponent {
 
-  public displayedColumns: string[] = ['title', 'count', 'pricePerCard', 'price', 'status', 'rating', 'actions']
+  public displayedColumns: string[] = ['title', 'count', 'pricePerCard', 'price', 'status', 'actions']
   public user: UserModel | null = null
 
   constructor(private router: Router, public utils: UtilsService) {

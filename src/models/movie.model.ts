@@ -19,7 +19,9 @@
       "createdAt": "2025-03-03T21:48:47.000Z"
     }*/
 
+import { GenreModel } from "./genre.model"
 import { MovieActorModel } from "./movieActor.model"
+import { MovieGenresModel } from "./movieGenres.model"
 
     export interface MovieModel {
         movieId: number
@@ -41,5 +43,6 @@ import { MovieActorModel } from "./movieActor.model"
             name: string
             createdAt: string
         }
-        movieActors: MovieActorModel
+        movieActors: MovieActorModel[]
+        movieGenres: MovieGenresModel[]
     }

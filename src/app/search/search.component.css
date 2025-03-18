@@ -1,0 +1,21 @@
+.half-width{
+    margin-left: 100px;
+}
+
+mat-card{
+    height: 80px;
+}
+
+mat-card-actions{
+    margin-left: 1300px;
+}
+
+.select-width{
+    width: 20%;
+    margin-left: 320px;
+}
+
+.time-width{
+    width: 20%;
+    margin-left: 10px;
+}

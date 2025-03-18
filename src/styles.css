@@ -70,13 +70,25 @@ mat-card-actions{
 }
 
 .detail-card{
-    width: 49%;
+    width: 48%;
     height: 736px;
     font-size: 16px;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+.detail-actor-card{
+    width: 88%;
+    height: 300px;
+    font-size: 18px;
+    padding-bottom: 16px;
+    cursor: default;
 }
 
 .detail-card-image{
-    height: 650px;
+    height: 700px;
+    margin-left: -160px;
+    margin-bottom: 15px;
 }
 
 .movie-content{
@@ -84,7 +96,7 @@ mat-card-actions{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px;   
+    gap: 40px;   
 }
 
 .list{
@@ -104,6 +116,10 @@ mat-card-actions{
 
 .half-width{
     width: 50%;
+}
+
+.quarter-width{
+    width: 25%;
 }
 
 .auth{

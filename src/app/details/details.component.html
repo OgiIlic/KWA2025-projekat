@@ -1,32 +1,39 @@
 <p>details works!</p>
 <main>
-    <div class="wrapper">
-      <div class="movie-content">
-        <div *ngIf="movie">
-        <img mat-card-image class="detail-card-image" src="{{movie.poster}}"
-                alt={{movie.title}}>
-        </div>
-        <!-- <pre>{{movie | json }}</pre> -->
-
-        <mat-card class="detail-card" appearance="outlined">
-            <mat-card-content>
-              <mat-list role="list">
-                  <h1>{{movie?.title}}</h1>
-                  <h3>({{movie.originalTitle}})</h3>
-                  <p>{{movie?.description}}</p>
-                  <h3>Režiser: </h3>
-                  <p>{{movie?.director?.name}}</p>
-                  <h3>Vreme trajanja: </h3>
-                  <p>{{movie.runTime}} minuta</p>
-                  <h3>Početak prikazivanja: </h3>
-                  <p>{{utils.formatDate(movie.startDate)}}</p>
-              </mat-list>
-            </mat-card-content>
-            <mat-card-actions>
-            </mat-card-actions>
-          </mat-card>
-        </div>
+  <div class="wrapper">
+    <div class="movie-content">
+      <div *ngIf="movie">
+        <img mat-card-image class="detail-card-image" src="{{movie.poster}}" alt={{movie.title}}>
+      </div>
+      <mat-card class="detail-card" appearance="outlined">
+        <mat-card-content>
+          <mat-list role="list">
+            <h1>{{movie?.title}}</h1>
+            <h3>({{movie.originalTitle}})</h3>
+            <p class="color">{{movie?.description}}</p>
+            <h3>Vreme trajanja: </h3>
+            <p>{{movie.runTime}} minuta</p>
+            <h3 class="color">Početak prikazivanja: </h3>
+            <p>{{utils.formatDate(movie.startDate)}}</p>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
     </div>
+    <div>
+      <mat-card class="detail-actor-card" appearance="outlined">
+        <mat-card-content>
+          <h3>Režiser: </h3>
+          <p>{{movie?.director?.name}}</p>
+          <h3>Glumci:</h3>
+          <p class="inline" *ngFor="let a of movie.movieActors"> {{a.actor.name}}, </p>
+          <h3>Žanrovi: </h3>
+          <p class="inline" *ngFor="let g of movie.movieGenres"> {{g.genre.name}} </p>
+        </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+      </mat-card>
+      <app-loading *ngIf="!movie"></app-loading>
+    </div>
+  </div>
 
-    <app-loading *ngIf="!movie"></app-loading>
 </main>
