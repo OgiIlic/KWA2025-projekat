@@ -4,14 +4,71 @@
     <mat-card-header>
       <img mat-card-avatar class="example-header-image" [src]="['https://ui-avatars.com/api/?name='+user.email]">
       <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
-      <mat-card-subtitle>Total orders: {{user.orders.length}}</mat-card-subtitle>
+      <mat-card-subtitle>
+        <p>Total orders: {{user.orders.length}}</p>
+        <p>Omiljeni žanr: {{user.favoriteGenre}}</p>
+      </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-      <p>Omiljeni žanr: {{user.favoriteGenre}}</p>
+    <mat-card-content class="user-card-content">
+      <mat-accordion multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title><i class="fa-solid fa-key"></i> Promeni lozinku </mat-panel-title>
+            <mat-panel-description>
+              Unesite i ponovite lozinku
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="full-width">
+            <mat-label>Nova lozinka</mat-label>
+            <input matInput type="password" [(ngModel)]="newPasswordValue" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Ponovi lozinku</mat-label>
+            <input matInput type="password" min="1" [(ngModel)]="repeatPasswordValue" />
+          </mat-form-field>
+          <button mat-button (click)="doChangePassword()"> Izmeni lozinku</button>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel *ngIf="userCopy">
+          <mat-expansion-panel-header>
+            <mat-panel-title><i class="fa-solid fa-pen"></i> Ažuriraj profil </mat-panel-title>
+            <mat-panel-description>
+              Izmenite podatke o profilu
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input disabled matInput type="email" [(ngModel)]="userCopy.email" />
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" min="1" [(ngModel)]="userCopy.firstName" />
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" min="1" [(ngModel)]="userCopy.lastName" />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Broj telefona</mat-label>
+            <input matInput type="tel" min="1" [(ngModel)]="userCopy.phone" />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Adresa</mat-label>
+            <input matInput type="text" min="1" [(ngModel)]="userCopy.address" />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Izaberite omiljeni žanr</mat-label>
+            <mat-select [(ngModel)]="userCopy.favoriteGenre">
+                <mat-option *ngFor="let genre of genreList" [value]="genre.name">{{genre.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+          <button mat-button (click)="doUpdateInfo()"> Ažuriraj</button>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="doChangePassword()"><i class="fa-solid fa-key"></i> Change password</button>
-    </mat-card-actions>
   </mat-card>
 
   <main>
