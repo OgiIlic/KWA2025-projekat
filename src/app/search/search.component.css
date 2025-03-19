@@ -19,3 +19,7 @@ mat-card-actions{
     width: 20%;
     margin-left: 10px;
 }
+
+table{
+    cursor: default;
+}
